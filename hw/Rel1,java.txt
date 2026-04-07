@@ -1,0 +1,16 @@
+class Rel
+{
+ public static void main(String[] args)
+{
+ int a=10;
+    a+=10;
+    a-=5;
+    a*=10;
+    a/=2;
+
+System.out.println(" the value of add "+a);
+System.out.println(" the value of sub "+a);
+System.out.println(" the value of multi "+a);
+System.out.println(" the value of div "+a);
+}
+}
