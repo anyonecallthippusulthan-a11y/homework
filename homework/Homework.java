@@ -1,0 +1,1 @@
+package homework;public class Homework {    public static void main(String[] args) {       insert sq=new insert();//       sq.inserts(10);//       sq.inserts(20);//       sq.inserts(30);          sq.display();          sq.remove(20); //       sq.display();    }    }
