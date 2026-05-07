@@ -1,0 +1,29 @@
+=========== BIO DATA ===========
+
+ Personal Details
+Name : sulthan
+Age : 34
+Gender : male
+DOB : 25092004
+Blood Group : b+
+
+ Education
+Qualification : bsccomputer
+College : naizoa
+CGPA : 454
+
+ Skills
+34
+
+Experience : 232
+
+ Contact
+Phone : 23
+Email : 4322342sdas
+Address : 333
+
+ Family
+Father Name : 333
+Mother Name : 33
+
+================================
