@@ -1,92 +1,58 @@
-class PatientRecord {
+import java.util.*;
 
-    private String patientName;
-    private int age;
-    private String disease;
-    private String doctorName;
-    private String roomType;
-    private double billAmount;
-
-    // Private Constructor
-    private PatientRecord(Builder builder) {
-        this.patientName = builder.patientName;
-        this.age = builder.age;
-        this.disease = builder.disease;
-        this.doctorName = builder.doctorName;
-        this.roomType = builder.roomType;
-        this.billAmount = builder.billAmount;
-    }
-
-    // Display Method
-    public void displayDetails() {
-        System.out.println("Patient Name : " + patientName);
-        System.out.println("Age          : " + age);
-        System.out.println("Disease      : " + disease);
-        System.out.println("Doctor Name  : " + doctorName);
-        System.out.println("Room Type    : " + roomType);
-        System.out.println("Bill Amount  : " + billAmount);
-    }
-
-    // Static Inner Builder Class
-    public static class Builder {
-
-        private String patientName;
-        private int age;
-        private String disease;
-        private String doctorName;
-        private String roomType;
-        private double billAmount;
-
-        public Builder setPatientName(String patientName) {
-            this.patientName = patientName;
-            return this;
-        }
-
-        public Builder setAge(int age) {
-            this.age = age;
-            return this;
-        }
-
-        public Builder setDisease(String disease) {
-            this.disease = disease;
-            return this;
-        }
-
-        public Builder setDoctorName(String doctorName) {
-            this.doctorName = doctorName;
-            return this;
-        }
-
-        public Builder setRoomType(String roomType) {
-            this.roomType = roomType;
-            return this;
-        }
-
-        public Builder setBillAmount(double billAmount) {
-            this.billAmount = billAmount;
-            return this;
-        }
-
-        // Build Method
-        public PatientRecord build() {
-            return new PatientRecord(this);
-        }
-    }
-}
-
-// Main Class
 public class Main {
     public static void main(String[] args) {
 
-        PatientRecord patient = new PatientRecord.Builder()
-                .setPatientName("Arun")
-                .setAge(25)
-                .setDisease("Fever")
-                .setDoctorName("Dr. Kumar")
-                .setRoomType("Deluxe")
-                .setBillAmount(15000)
-                .build();
+        Scanner sc = new Scanner(System.in);
 
-        patient.displayDetails();
+        int rows = sc.nextInt();
+        int cols = sc.nextInt();
+
+        int[][] matrix = new int[rows][cols];
+
+        // Input Matrix
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                matrix[i][j] = sc.nextInt();
+            }
+        }
+
+        int top = 0;
+        int bottom = rows - 1;
+        int left = 0;
+        int right = cols - 1;
+
+        while (top <= bottom && left <= right) {
+
+            // Left to Right
+            for (int i = left; i <= right; i++) {
+                System.out.print(matrix[top][i] + " ");
+            }
+            top++;
+
+            // Top to Bottom
+            for (int i = top; i <= bottom; i++) {
+                System.out.print(matrix[i][right] + " ");
+            }
+            right--;
+
+            // Right to Left
+            if (top <= bottom) {
+                for (int i = right; i >= left; i--) {
+                    System.out.print(matrix[bottom][i] + " ");
+                }
+                bottom--;
+            }
+
+            // Bottom to Top
+            if (left <= right) {
+                for (int i = bottom; i >= top; i--) {
+                    System.out.print(matrix[i][left] + " ");
+                }
+                left++;
+            }
+        }
+
+        sc.close();
     }
 }
