@@ -1,0 +1,115 @@
+package homework1;
+
+import java.sql.*;
+import java.util.Scanner;
+
+public class hw {
+
+    public Connection cone() throws Exception {
+        Class.forName("org.postgresql.Driver");
+
+        String url = "jdbc:postgresql://localhost:5432/homeworks";
+        String username = "postgres";
+        String pass = "Sulthan@25";
+
+        return DriverManager.getConnection(url, username, pass);
+    }
+
+    public void insert() throws Exception {
+        Connection c = cone();
+        Statement s = c.createStatement();
+
+        s.executeUpdate(
+            "INSERT INTO Student12(sname,std,age) VALUES('Arun',12,17)"
+        );
+
+        System.out.println("Record Inserted");
+        c.close();
+    }
+
+    public void display() throws Exception {
+        Connection c = cone();
+        Statement s = c.createStatement();
+
+        ResultSet rs = s.executeQuery("SELECT * FROM Student12");
+
+        while(rs.next()) {
+            System.out.println(
+                rs.getInt("sid") + " " +
+                rs.getString("sname") + " " +
+                rs.getInt("std") + " " +
+                rs.getInt("age")
+            );
+        }
+
+        c.close();
+    }
+
+    public void update() throws Exception {
+        Connection c = cone();
+        Statement s = c.createStatement();
+
+        s.executeUpdate(
+            "UPDATE Student12 SET sname='Saravana' WHERE sid=2"
+        );
+
+        System.out.println("Record Updated");
+        c.close();
+    }
+
+    public void delete() throws Exception {
+        Connection c = cone();
+        Statement s = c.createStatement();
+
+        s.executeUpdate(
+            "DELETE FROM Student12 WHERE sid=3"
+        );
+
+        System.out.println("Record Deleted");
+        c.close();
+    }
+
+    public static void main(String[] args) throws Exception {
+
+        hw h = new hw();
+        Scanner sc = new Scanner(System.in);
+
+        while(true) {
+
+            System.out.println("\n1.Insert");
+            System.out.println("2.Display");
+            System.out.println("3.Update");
+            System.out.println("4.Delete");
+            System.out.println("5.Exit");
+
+            System.out.print("Enter Choice: ");
+            int choice = sc.nextInt();
+
+            switch(choice) {
+
+                case 1:
+                    h.insert();
+                    break;
+
+                case 2:
+                    h.display();
+                    break;
+
+                case 3:
+                    h.update();
+                    break;
+
+                case 4:
+                    h.delete();
+                    break;
+
+                case 5:
+                    System.out.println("Program End");
+                    System.exit(0);
+
+                default:
+                    System.out.println("Invalid Choice");
+            }
+        }
+    }
+}
