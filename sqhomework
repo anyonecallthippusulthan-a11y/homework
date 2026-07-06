@@ -1,0 +1,137 @@
+create table bank_account(acc_no int primary key,acc_name varchar(50),balance numeric(10,2));
+
+insert into bank_account values
+(101,'arun',5000),
+(102,'bala',7000),
+(103,'charan',9000);
+
+begin;
+update bank_account
+set balance=balance+1000
+where acc_no=101;
+rollback;
+
+select * from bank_account;
+
+create table employee(emp_id int primary key,emp_name varchar(50),salary numeric(10,2));
+
+insert into employee values
+(1,'arun',30000),
+(2,'bala',35000),
+(3,'charan',40000);
+
+create view employee_view as
+select emp_name from employee;
+
+create user guest with password '123';
+
+grant select on employee_view to guest;
+
+create view employee_view as
+select emp_name,salary from employee;
+
+select * from employee_view;
+
+update employee_view set salary=45000 where emp_name='arun';
+
+drop view employee_view;
+
+create database transport_company;
+
+create table vehicle_details(vehicle_id int primary key,vehicle_name varchar(50),vehicle_number varchar(20),capacity int);
+
+create table delivery_details(delivery_id int primary key,product_name varchar(50),shop_name varchar(50),delivery_area varchar(50),status varchar(20));
+
+create view completed_delivery as
+select * from delivery_details
+where status='completed';
+
+create index idx_delivery_area
+on delivery_details(delivery_area);
+
+begin;
+insert into delivery_details values
+(1,'rice','abc stores','madurai','completed'),
+(2,'oil','xyz mart','chennai','pending'),
+(3,'sugar','fresh shop','trichy','completed');
+
+commit;
+
+begin;
+delete from delivery_details
+where delivery_id=2;
+rollback;
+
+select * from delivery_details;
+
+create user transport_user with password '123';
+
+grant select on delivery_details to transpcreate table bank_account(acc_no int primary key,acc_name varchar(50),balance numeric(10,2));
+
+insert into bank_account values
+(101,'arun',5000),
+(102,'bala',7000),
+(103,'charan',9000);
+
+begin;
+update bank_account
+set balance=balance+1000
+where acc_no=101;
+rollback;
+
+select * from bank_account;
+
+create table employee(emp_id int primary key,emp_name varchar(50),salary numeric(10,2));
+
+insert into employee values
+(1,'arun',30000),
+(2,'bala',35000),
+(3,'charan',40000);
+
+create view employee_view as
+select emp_name from employee;
+
+create user guest with password '123';
+
+grant select on employee_view to guest;
+
+create view employee_view as
+select emp_name,salary from employee;
+
+select * from employee_view;
+
+update employee_view set salary=45000 where emp_name='arun';
+
+drop view employee_view;
+
+create database transport_company;
+
+create table vehicle_details(vehicle_id int primary key,vehicle_name varchar(50),vehicle_number varchar(20),capacity int);
+
+create table delivery_details(delivery_id int primary key,product_name varchar(50),shop_name varchar(50),delivery_area varchar(50),status varchar(20));
+
+create view completed_delivery as
+select * from delivery_details
+where status='completed';
+
+create index idx_delivery_area
+on delivery_details(delivery_area);
+
+begin;
+insert into delivery_details values
+(1,'rice','abc stores','madurai','completed'),
+(2,'oil','xyz mart','chennai','pending'),
+(3,'sugar','fresh shop','trichy','completed');
+
+commit;
+
+begin;
+delete from delivery_details
+where delivery_id=2;
+rollback;
+
+select * from delivery_details;
+
+create user transport_user with password '123';
+
+grant select on delivery_details to transport_user;ort_user;
