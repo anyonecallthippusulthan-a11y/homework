@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #e8f5e9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 450px;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: green;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid gray;
+            border-radius: 5px;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border: 2px solid green;
+            outline: none;
+        }
+
+        .gender {
+            display: flex;
+            gap: 15px;
+            margin-top: 5px;
+        }
+
+        .gender label {
+            font-weight: normal;
+            margin: 0;
+        }
+
+        .terms {
+            margin-top: 15px;
+        }
+
+        .terms input {
+            width: auto;
+            margin-right: 8px;
+        }
+
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        button {
+            width: 48%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .register {
+            background: green;
+        }
+
+        .reset {
+            background: red;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Registration Form</h2>
+
+        <form>
+
+            <label>Full Name</label>
+            <input type="text" placeholder="Enter Full Name">
+
+            <label>Email ID</label>
+            <input type="email" placeholder="Enter Email">
+
+            <label>Username</label>
+            <input type="text" placeholder="Enter Username">
+
+            <label>Password</label>
+            <input type="password" placeholder="Enter Password">
+
+            <label>Confirm Password</label>
+            <input type="password" placeholder="Confirm Password">
+
+            <label>Gender</label>
+
+            <div class="gender">
+
+                <label>
+                    <input type="radio" name="gender">
+                    Male
+                </label>
+
+                <label>
+                    <input type="radio" name="gender">
+                    Female
+                </label>
+
+                <label>
+                    <input type="radio" name="gender">
+                    Other
+                </label>
+
+            </div>
+
+            <label>Date of Birth</label>
+            <input type="date">
+
+            <label>Mobile Number</label>
+            <input type="tel" placeholder="Enter Mobile Number">
+
+            <label>Course / Role</label>
+
+            <select>
+                <option>Select Course</option>
+                <option>Full Stack Developer</option>
+                <option>Java Developer</option>
+                <option>UI / UX Designer</option>
+                <option>Python Developer</option>
+            </select>
+
+            <label>Address</label>
+            <textarea rows="4" placeholder="Enter Address"></textarea>
+
+            <div class="terms">
+                <label>
+                    <input type="checkbox">
+                    I Accept Terms & Conditions
+                </label>
+            </div>
+
+            <div class="buttons">
+
+                <button class="register">Register</button>
+
+                <button type="reset" class="reset">Reset</button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>
