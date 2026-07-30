@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSS DOM</title>
+</head>
+<body>
+
+<h2 id="demo">Hello JavaScript</h2>
+
+<button onclick="changeColor()">Change Color</button>
+<button onclick="increaseFont()">Increase Font Size</button>
+<button onclick="hideText()">Hide Element</button>
+<button onclick="exitApp()">Exit</button>
+
+<script>
+
+function changeColor(){
+    document.getElementById("demo").style.color="blue";
+}
+
+function increaseFont(){
+    document.getElementById("demo").style.fontSize="40px";
+}
+
+function hideText(){
+    document.getElementById("demo").style.display="none";
+}
+
+function exitApp(){
+    alert("Exit");
+}
+
+</script>
+
+</body>
+</html>

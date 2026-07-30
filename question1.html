@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DOM Menu</title>
+</head>
+<body>
+
+<input type="text" id="text" placeholder="Enter Text"><br><br>
+
+<input type="number" id="num1" placeholder="First Number">
+<input type="number" id="num2" placeholder="Second Number">
+
+<p id="output">Result Here</p>
+
+<button onclick="readText()">1. Read Text</button>
+<button onclick="addNumbers()">2. Add Numbers</button>
+<button onclick="changeCSS()">3. Change CSS</button>
+<button onclick="exitMenu()">4. Exit</button>
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2 id="title">Welcome</h2>
+
+<input id="num1" placeholder="First Number">
+<input id="num2" placeholder="Second Number">
+
+<br><br>
+
+<button onclick="readText()">Read Text</button>
+
+<button onclick="addNumbers()">Add</button>
+
+<button onclick="changeCSS()">Change CSS</button>
+
+<p id="result"></p>
+
+<script>
+
+function readText(){
+    alert(document.getElementById("title").innerText);
+}
+
+function addNumbers(){
+
+let a=Number(document.getElementById("num1").value);
+let b=Number(document.getElementById("num2").value);
+
+document.getElementById("result").innerHTML=a+b;
+
+}
+
+function changeCSS(){
+
+document.getElementById("title").style.color="red";
+document.getElementById("title").style.fontSize="40px";
+
+}
+
+</script>
+
+</body>
+</html>
+<script>
+
+function readText(){
+    let txt=document.getElementById("text").value;
+    document.getElementById("output").innerHTML=txt;
+}
+
+function addNumbers(){
+    let a=Number(document.getElementById("num1").value);
+    let b=Number(document.getElementById("num2").value);
+    document.getElementById("output").innerHTML="Sum = "+(a+b);
+}
+
+function changeCSS(){
+    document.getElementById("output").style.color="red";
+    document.getElementById("output").style.fontSize="30px";
+}
+
+function exitMenu(){
+    alert("Program End");
+}
+
+</script>
+
+</body>
+</html>

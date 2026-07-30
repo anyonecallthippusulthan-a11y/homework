@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2 id="title">Welcome</h2>
+
+<input id="num1" placeholder="First Number">
+<input id="num2" placeholder="Second Number">
+
+<br><br>
+
+<button onclick="readText()">Read Text</button>
+
+<button onclick="addNumbers()">Add</button>
+
+<button onclick="changeCSS()">Change CSS</button>
+
+<p id="result"></p>
+
+<script>
+
+function readText(){
+    alert(document.getElementById("title").innerText);
+}
+
+function addNumbers(){
+
+let a=Number(document.getElementById("num1").value);
+let b=Number(document.getElementById("num2").value);
+
+document.getElementById("result").innerHTML=a+b;
+
+}
+
+function changeCSS(){
+
+document.getElementById("title").style.color="red";
+document.getElementById("title").style.fontSize="40px";
+
+}
+
+</script>
+
+</body>
+</html>
